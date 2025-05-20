@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment | BlueStar Media</title>
+    
+    <!-- Import Tailwind CSS (this is essential for your styles to work) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Import Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Your custom stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Copy essential styles from your main page -->
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        .pulse {
+            animation: pulse 3s ease infinite;
+        }
+        .slide-in {
+            animation: slideIn 1s ease-out forwards;
+        }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .bg-dark-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200 font-sans">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center mr-3">
+                            <i class="fas fa-star text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold gradient-text">BlueStar Media</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html#home" class="nav-link">Home</a>
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="index.html#services" class="nav-link">Services</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                    <a href="#book" class="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-md font-medium hover:from-blue-500 hover:to-purple-500 transition-all duration-300">
+                        Book Appointment
+                    </a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html#home" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800">Home</a>
+                <a href="index.html#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800">About</a>
+                <a href="index.html#services" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800">Services</a>
+                <a href="index.html#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800">Contact</a>
+                <a href="#book" class="block px-3 py-2 rounded-md text-base font-medium bg-gradient-to-r from-blue-600 to-purple-600 text-center">
+                    Book Appointment
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header with some spacing -->
+    <header class="pt-32 pb-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <h1 class="text-4xl font-bold gradient-text text-center">Book an Appointment</h1>
+        <p class="text-lg text-gray-400 text-center mt-4 max-w-2xl mx-auto">
+            Schedule a free consultation with our AI experts to discover how we can transform your business operations.
+        </p>
+    </header>
+
+    <!-- Book Appointment Section -->
+    <section id="book" class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="bg-gray-800 rounded-2xl overflow-hidden">
+            <div class="grid md:grid-cols-2">
+                <div class="p-12 bg-gradient-to-br from-blue-900/30 to-purple-900/30 flex flex-col justify-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 slide-in">Ready to Automate?</h2>
+                    <p class="text-lg text-gray-300 mb-8 slide-in delay-1">
+                        Book a free consultation with our AI experts to discover how we can transform your business operations.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start slide-in delay-2">
+                            <div class="flex-shrink-0 bg-blue-500/20 rounded-full p-2 mr-4">
+                                <i class="fas fa-check text-blue-400"></i>
+                            </div>
+                            <div class="text-gray-300">No obligation consultation</div>
+                        </div>
+                        <div class="flex items-start slide-in delay-3">
+                            <div class="flex-shrink-0 bg-blue-500/20 rounded-full p-2 mr-4">
+                                <i class="fas fa-check text-blue-400"></i>
+                            </div>
+                            <div class="text-gray-300">Custom solution proposal</div>
+                        </div>
+                        <div class="flex items-start slide-in delay-4">
+                            <div class="flex-shrink-0 bg-blue-500/20 rounded-full p-2 mr-4">
+                                <i class="fas fa-check text-blue-400"></i>
+                            </div>
+                            <div class="text-gray-300">30-minute discovery call</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-12">
+                    <form id="appointment-form" class="space-y-6">
+                        <div class="slide-in delay-1">
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
+                            <input type="text" id="name" name="name" class="w-full bg-gray-700 border border-gray-600 rounded-md px-4 py-3 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                        </div>
+                        <div class="slide-in delay-2">
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                            <input type="email" id="email" name="email" class="w-full bg-gray-700 border border-gray-600 rounded-md px-4 py-3 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                        </div>
+                        <div class="slide-in delay-3">
+                            <label for="company" class="block text-sm font-medium text-gray-300 mb-1">Company</label>
+                            <input type="text" id="company" name="company" class="w-full bg-gray-700 border border-gray-600 rounded-md px-4 py-3 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div class="slide-in delay-4">
+                            <label for="service" class="block text-sm font-medium text-gray-300 mb-1">Service Interest</label>
+                            <select id="service" name="service" class="w-full bg-gray-700 border border-gray-600 rounded-md px-4 py-3 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="">Select a service</option>
+                                <option value="Customer Support Agents">Customer Support Agents</option>
+                                <option value="Process Automation">Process Automation</option>
+                                <option value="Data Analysis Agents">Data Analysis Agents</option>
+                                <option value="Custom Solution">Custom Solution</option>
+                            </select>
+                        </div>
+                        <div class="slide-in delay-4">
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full bg-gray-700 border border-gray-600 rounded-md px-4 py-3 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-md font-medium text-white hover:from-blue-500 hover:to-purple-500 transition-all duration-300 slide-in delay-4">
+                            Book Free Consultation
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="mb-8 md:mb-0">
+                    <a href="index.html" class="flex items-center mb-6">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center mr-3">
+                            <i class="fas fa-star text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold gradient-text">BlueStar Media</span>
+                    </a>
+                    <p class="text-gray-400 mb-4">
+                        Revolutionizing business automation through intelligent AI solutions.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-red-500 transition-colors">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#about" class="text-gray-400 hover:text-blue-400 transition-colors">About Us</a></li>
+                        <li><a href="index.html#services" class="text-gray-400 hover:text-blue-400 transition-colors">Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Case Studies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Whitepapers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Webinars</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Cookie Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2023 BlueStar Media. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Terms</a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Form submission
+        document.getElementById('appointment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const company = document.getElementById('company').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send this data to your server
+            console.log('Form submitted:', { name, email, company, service, message });
+            
+            // Show success message
+            alert(`Thank you, ${name}! Your consultation request has been received. We'll contact you soon at ${email}.`);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('slide-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.slide-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
