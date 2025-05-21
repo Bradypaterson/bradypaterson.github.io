@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueStar Media | Legal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .bg-dark-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        .legal-section {
+            background: linear-gradient(to bottom, rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 1));
+        }
+        .legal-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .legal-nav {
+            position: sticky;
+            top: 100px;
+        }
+        .legal-content {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        .legal-content h2 {
+            border-left: 4px solid #3b82f6;
+        }
+        .legal-content a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        .legal-content a:hover {
+            text-decoration: underline;
+        }
+        .legal-content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .legal-content ol {
+            list-style-type: decimal;
+            padding-left: 20px;
+        }
+        .tab-button {
+            transition: all 0.3s ease;
+        }
+        .tab-button.active {
+            background: rgba(59, 130, 246, 0.2);
+            border-left: 3px solid #3b82f6;
+        }
+        .tab-button:hover:not(.active) {
+            background: rgba(59, 130, 246, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200 font-sans">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <a href="index" class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center mr-3">
+                            <i class="fas fa-star text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold gradient-text">BlueStar Media</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="index.html#services" class="nav-link">Services</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                    <a href="book-appointment.html" class="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-md font-medium hover:from-blue-500 hover:to-purple-500 transition-all duration-300">
+                        Book Appointment
+                    </a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800">Home</a>
+                <a href="index.html#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800">About</a>
+                <a href="index.html#services" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800">Services</a>
+                <a href="index.html#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800">Contact</a>
+                <a href="book-appointment.html" class="block px-3 py-2 rounded-md text-base font-medium bg-gradient-to-r from-blue-600 to-purple-600 text-center">
+                    Book Appointment
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Legal Pages Container -->
+    <div class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 legal-section min-h-screen">
+        <div class="legal-container">
+            <div class="flex flex-col md:flex-row gap-8">
+                <!-- Legal Navigation -->
+                <div class="md:w-1/4">
+                    <div class="legal-nav p-4 rounded-lg bg-gray-800/50 border border-gray-700">
+                        <h2 class="text-xl font-bold mb-4 gradient-text">Legal</h2>
+                        <ul class="space-y-2">
+                            <li>
+                                <button id="privacy-tab" class="tab-button active w-full text-left px-4 py-2 rounded transition-all duration-200" onclick="showTab('privacy')">
+                                    <i class="fas fa-shield-alt mr-2"></i> Privacy Policy
+                                </button>
+                            </li>
+                            <li>
+                                <button id="terms-tab" class="tab-button w-full text-left px-4 py-2 rounded transition-all duration-200" onclick="showTab('terms')">
+                                    <i class="fas fa-file-contract mr-2"></i> Terms of Service
+                                </button>
+                            </li>
+                            <li>
+                                <button id="gdpr-tab" class="tab-button w-full text-left px-4 py-2 rounded transition-all duration-200" onclick="showTab('gdpr')">
+                                    <i class="fas fa-gavel mr-2"></i> GDPR Compliance
+                                </button>
+                            </li>
+                            <li>
+                                <button id="cookie-tab" class="tab-button w-full text-left px-4 py-2 rounded transition-all duration-200" onclick="showTab('cookie')">
+                                    <i class="fas fa-gavel mr-2"></i> Cookie Policy
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Legal Content -->
+                <div class="md:w-3/4">
+                    <!-- Privacy Policy -->
+                    <div id="privacy-content" class="legal-content p-8">
+                        <h1 class="text-3xl font-bold mb-6 gradient-text">Privacy Policy</h1>
+                        <p class="mb-6">Last Updated: May 20, 2025</p>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">Introduction</h2>
+                            <p class="mb-4">Welcome to BlueStar Media ("we," "our," or "us"). We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website <a href="https://bluestarmedia.ca" class="text-blue-400">bluestarmedia.ca</a>.</p>
+                            <p>By using our website, you consent to the data practices described in this policy. If you do not agree with our policies and practices, please do not use our website.</p>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">Information We Collect</h2>
+                            <p class="mb-4">We collect several types of information from and about users of our website, including:</p>
+                            <ul class="mb-4 space-y-2">
+                                <li><strong>Personal Information:</strong> Name, email address, phone number, and other contact details when you fill out forms on our site.</li>
+                                <li><strong>Usage Data:</strong> Information about how you interact with our website, including IP address, browser type, pages visited, and time spent on pages.</li>
+                                <li><strong>Cookies:</strong> We use cookies and similar tracking technologies to track activity on our website and hold certain information.</li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">How We Use Your Information</h2>
+                            <p class="mb-4">We use the information we collect for various purposes, including:</p>
+                            <ul class="mb-4 space-y-2">
+                                <li>To provide and maintain our service</li>
+                                <li>To notify you about changes to our service</li>
+                                <li>To allow you to participate in interactive features of our service</li>
+                                <li>To provide customer support</li>
+                                <li>To gather analysis or valuable information so that we can improve our service</li>
+                                <li>To monitor the usage of our service</li>
+                                <li>To detect, prevent and address technical issues</li>
+                                <li>To provide you with news, special offers and general information about other goods, services and events which we offer</li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">Disclosure of Data</h2>
+                            <p class="mb-4">We may disclose your personal information in the following situations:</p>
+                            <ul class="mb-4 space-y-2">
+                                <li><strong>Service Providers:</strong> We may employ third party companies and individuals to facilitate our service, provide the service on our behalf, perform service-related services or assist us in analyzing how our service is used.</li>
+                                <li><strong>Business Transfers:</strong> If we are involved in a merger, acquisition or asset sale, your personal data may be transferred.</li>
+                                <li><strong>Legal Requirements:</strong> We may disclose your information if required to do so by law or in response to valid requests by public authorities.</li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">Security of Data</h2>
+                            <p class="mb-4">The security of your data is important to us but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your personal data, we cannot guarantee its absolute security.</p>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">Your Data Protection Rights</h2>
+                            <p class="mb-4">Depending on your location, you may have certain rights regarding your personal information, including:</p>
+                            <ul class="mb-4 space-y-2">
+                                <li>The right to access, update or delete the information we have on you</li>
+                                <li>The right of rectification</li>
+                                <li>The right to object</li>
+                                <li>The right of restriction</li>
+                                <li>The right to data portability</li>
+                                <li>The right to withdraw consent</li>
+                            </ul>
+                            <p>To exercise any of these rights, please contact us at <a href="mailto:privacy@bluestarmedia.com" class="text-blue-400">info@bluestarmedia.ca</a>.</p>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">Changes to This Privacy Policy</h2>
+                            <p class="mb-4">We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the top of this Privacy Policy.</p>
+                            <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">Contact Us</h2>
+                            <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                            <ul class="mt-2 space-y-1">
+                                <li>By email: <a href="mailto:privacy@bluestarmedia.com" class="text-blue-400">info@bluestarmedia.ca</a></li>
+                                <li>By visiting this page on our website: <a href="https://bluestarmedia.com/contact" class="text-blue-400">Contact Us</a></li>
+                                <!-- <li>By phone: +1 (555) 123-4567</li> -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Terms of Service -->
+                    <div id="terms-content" class="legal-content p-8 hidden">
+                        <h1 class="text-3xl font-bold mb-6 gradient-text">Terms of Service</h1>
+                        <p class="mb-6">Last Updated: May 17, 2025</p>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">1. Acceptance of Terms</h2>
+                            <p class="mb-4">By accessing or using the BlueStar Media website ("Service"), you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of the terms, you may not access the Service.</p>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">2. Description of Service</h2>
+                            <p class="mb-4">BlueStar Media provides AI automation solutions and digital marketing services through its website and associated platforms. These services may include but are not limited to:</p>
+                            <ul class="mb-4 space-y-2">
+                                <li>AI automation consulting</li>
+                                <li>Custom AI agent development</li>
+                                <li>Digital marketing services</li>
+                                <li>Business process automation</li>
+                                <li>Related professional services</li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">3. User Responsibilities</h2>
+                            <p class="mb-4">As a user of our Service, you agree to:</p>
+                            <ul class="mb-4 space-y-2">
+                                <li>Provide accurate and complete information when creating an account or using our services</li>
+                                <li>Maintain the confidentiality of your account credentials</li>
+                                <li>Notify us immediately of any unauthorized use of your account</li>
+                                <li>Use the Service only for lawful purposes and in accordance with these Terms</li>
+                                <li>Not use the Service in any way that could damage, disable, overburden, or impair our servers or networks</li>
+                                <li>Not attempt to gain unauthorized access to any part of the Service</li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">4. Intellectual Property</h2>
+                            <p class="mb-4">The Service and its original content, features, and functionality are and will remain the exclusive property of BlueStar Media and its licensors. The Service is protected by copyright, trademark, and other laws of both the United States and foreign countries.</p>
+                            <p>Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of BlueStar Media.</p>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">5. Payments and Refunds</h2>
+                            <p class="mb-4">Certain aspects of the Service may require payment. You agree to pay all fees and charges associated with your account on a timely basis.</p>
+                            <ul class="mb-4 space-y-2">
+                                <li>All fees are non-refundable except as expressly stated otherwise in these Terms or required by law.</li>
+                                <li>We may change our fees at any time by posting the changes to the Service with advance notice.</li>
+                                <li>You are responsible for all taxes applicable to the fees and charges in any applicable jurisdiction.</li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">6. Termination</h2>
+                            <p class="mb-4">We may terminate or suspend your account and bar access to the Service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms.</p>
+                            <p>If you wish to terminate your account, you may simply discontinue using the Service. All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.</p>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">7. Limitation of Liability</h2>
+                            <p class="mb-4">In no event shall BlueStar Media, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from:</p>
+                            <ul class="mb-4 space-y-2">
+                                <li>Your access to or use of or inability to access or use the Service</li>
+                                <li>Any conduct or content of any third party on the Service</li>
+                                <li>Any content obtained from the Service</li>
+                                <li>Unauthorized access, use or alteration of your transmissions or content</li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">8. Disclaimer</h2>
+                            <p class="mb-4">Your use of the Service is at your sole risk. The Service is provided on an "AS IS" and "AS AVAILABLE" basis. BlueStar Media expressly disclaims all warranties of any kind, whether express or implied, including, but not limited to the implied warranties of merchantability, fitness for a particular purpose and non-infringement.</p>
+                            <p>BlueStar Media makes no warranty that (i) the Service will meet your requirements, (ii) the Service will be uninterrupted, timely, secure, or error-free, (iii) the results that may be obtained from the use of the Service will be accurate or reliable, or (iv) the quality of any products, services, information, or other material purchased or obtained by you through the Service will meet your expectations.</p>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">9. Governing Law</h2>
+                            <p class="mb-4">These Terms shall be governed and construed in accordance with the laws of the State of Delaware, United States, without regard to its conflict of law provisions.</p>
+                            <p>Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect.</p>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">10. Changes to Terms</h2>
+                            <p class="mb-4">We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+                            <p>By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.</p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">11. Contact Us</h2>
+                            <p>If you have any questions about these Terms, please contact us:</p>
+                            <ul class="mt-2 space-y-1">
+                                <li>By email: <a href="mailto:legal@bluestarmedia.com" class="text-blue-400">info@bluestarmedia.ca</a></li>
+                                <li>By visiting this page on our website: <a href="https://bluestarmedia.com/contact" class="text-blue-400">Contact Us</a></li>
+                                <!-- <li>By phone: +1 (555) 123-4567</li> -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- GDPR Compliance -->
+                    <div id="gdpr-content" class="legal-content p-8 hidden">
+                        <h1 class="text-3xl font-bold mb-6 gradient-text">GDPR Complience Statement</h1>
+                        <p class="mb-6">Last Updated: May 18, 2023</p>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">1. Introduction</h2>
+                            <p class="mb-4">BlueStar Media ("we," "our," or "us") is committed to ensuring the security and protection of the personal information that we process, and to provide a compliant and consistent approach to data protection. We have always had a robust and effective data protection program in place which complies with existing law and abides by the data protection principles. However, we recognize our obligations in updating and expanding this program to meet the demands of the GDPR.</p>
+                            <p>The EU General Data Protection Regulation (GDPR) effective from May 25, 2018, requires businesses to protect the personal data and privacy of EU citizens for transactions that occur within EU member states. The GDPR also regulates the exportation of personal data outside the EU.</p>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">2. Our Commitment</h2>
+                            <p class="mb-4">BlueStar Media is fully committed to complying with the provisions of the GDPR. Our compliance measures include:</p>
+                            <ul class="mb-4 space-y-2">
+                                <li><strong>Data Protection Policies:</strong> We have implemented comprehensive data protection policies that incorporate the necessary controls and procedures to ensure we meet the requirements and standards of the GDPR.</li>
+                                <li><strong>Data Subject Rights:</strong> We have processes in place to accommodate the expanded rights of data subjects under the GDPR, including rights to access, rectification, erasure, restriction of processing, data portability, and objection.</li>
+                                <li><strong>Lawful Basis for Processing:</strong> We ensure that all personal data is processed lawfully, fairly, and transparently, with a valid legal basis for processing.</li>
+                                <li><strong>Data Protection Impact Assessments (DPIAs):</strong> Where processing operations are likely to result in high risk to individuals' rights and freedoms, we conduct DPIAs to assess and mitigate risks.</li>
+                                <li><strong>Data Breach Procedures:</strong> We have procedures in place to detect, report, and investigate personal data breaches in accordance with GDPR requirements.</li>
+                                <li><strong>Third-Party Processors:</strong> We ensure that all third-party service providers processing personal data on our behalf comply with GDPR requirements through contractual agreements.</li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">3. Lawful Basis for Processing</h2>
+                            <p class="mb-4">Under the GDPR, we must have a lawful basis for processing personal data. The lawful bases we rely on include:</p>
+                            <ul class="mb-4 space-y-2">
+                                <li><strong>Consent:</strong> The individual has given clear consent for us to process their personal data for a specific purpose.</li>
+                                <li><strong>Contract:</strong> The processing is necessary for a contract we have with the individual, or because they have asked us to take specific steps before entering into a contract.</li>
+                                <li><strong>Legal Obligation:</strong> The processing is necessary for us to comply with the law (not including contractual obligations).</li>
+                                <li><strong>Legitimate Interests:</strong> The processing is necessary for our legitimate interests or the legitimate interests of a third party, unless there is a good reason to protect the individual's personal data which overrides those legitimate interests.</li>
+                            </ul>
+                            <p>Where we rely on consent as the lawful basis for processing, we ensure that consent is freely given, specific, informed, and unambiguous, and that individuals can withdraw their consent at any time.</p>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">4. Data Subject Rights</h2>
+                            <p class="mb-4">Under the GDPR, individuals have enhanced rights regarding their personal data. These rights include:</p>
+                            <ul class="mb-4 space-y-2">
+                                <li><strong>Right to Access:</strong> Individuals have the right to request copies of their personal data that we hold.</li>
+                                <li><strong>Right to Rectification:</strong> Individuals can request that we correct any information they believe is inaccurate or complete information they believe is incomplete.</li>
+                                <li><strong>Right to Erasure ("Right to be Forgotten"):</strong> Individuals can request that we erase their personal data under certain conditions.</li>
+                                <li><strong>Right to Restrict Processing:</strong> Individuals can request that we restrict the processing of their personal data under certain conditions.</li>
+                                <li><strong>Right to Data Portability:</strong> Individuals can request that we transfer the data we have collected to another organization, or directly to them, under certain conditions.</li>
+                                <li><strong>Right to Object:</strong> Individuals have the right to object to our processing of their personal data under certain conditions.</li>
+                                <li><strong>Rights Related to Automated Decision Making and Profiling:</strong> Individuals have the right not to be subject to a decision based solely on automated processing, including profiling, which produces legal effects concerning them or similarly significantly affects them.</li>
+                            </ul>
+                            <p>To exercise any of these rights, please contact us using the information provided in the "Contact Us" section below.</p>
+                        </div>
+
+                        <!-- <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">5. Data Protection Officer</h2>
+                            <p class="mb-4">BlueStar Media has appointed a Data Protection Officer (DPO) to oversee compliance with data protection laws, including the GDPR. Our DPO can be contacted at:</p>
+                            <ul class="mb-4 space-y-1">
+                                <li>Email: <a href="mailto:dpo@bluestarmedia.com" class="text-blue-400">info@bluestarmedia.ca</a></li>
+                                <li>Postal Address: Data Protection Officer, BlueStar Media, 123 Tech Street, San Francisco, CA 94107</li>
+                            </ul>
+                        </div> -->
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">5. International Data Transfers</h2>
+                            <p class="mb-4">BlueStar Media may transfer personal data outside the European Economic Area (EEA) to countries that may not provide the same level of data protection as the EEA. When we do so, we ensure appropriate safeguards are in place to protect the transferred data, such as:</p>
+                            <ul class="mb-4 space-y-2">
+                                <li>Standard Contractual Clauses approved by the European Commission</li>
+                                <li>Binding Corporate Rules</li>
+                                <li>Privacy Shield certification (for transfers to the US)</li>
+                                <li>Other legally approved mechanisms for international data transfers</li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">6. Data Security</h2>
+                            <p class="mb-4">We implement appropriate technical and organizational measures to ensure a level of security appropriate to the risk, including:</p>
+                            <ul class="mb-4 space-y-2">
+                                <li>Encryption of personal data in transit and at rest</li>
+                                <li>Regular testing, assessing, and evaluating of our security measures</li>
+                                <li>Pseudonymization and minimization of data collection</li>
+                                <li>Access controls and authentication procedures</li>
+                                <li>Regular staff training on data protection and security</li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">7. Data Breach Notification</h2>
+                            <p class="mb-4">In the event of a personal data breach, we have procedures in place to:</p>
+                            <ul class="mb-4 space-y-2">
+                                <li>Detect, investigate, and report a personal data breach to the relevant supervisory authority within 72 hours of becoming aware of it, where feasible</li>
+                                <li>Communicate high-risk breaches to affected individuals without undue delay</li>
+                                <li>Document all breaches, regardless of whether notification was required</li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">8. Changes to This Statement</h2>
+                            <p class="mb-4">We may update this GDPR Compliance Statement from time to time to reflect changes in our practices or legal requirements. We will notify you of any significant changes by posting the new statement on this page and updating the "Last Updated" date at the top of this statement.</p>
+                            <p>We encourage you to periodically review this statement to stay informed about how we are protecting your personal data.</p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">9. Contact Us</h2>
+                            <p>If you have any questions about our GDPR compliance or wish to exercise your rights under the GDPR, please contact us:</p>
+                            <ul class="mt-2 space-y-1">
+                                <li>By email: <a href="mailto:info@bluestarmedia.ca" class="text-blue-400">info@bluestarmedia.ca</a></li>
+                                <li>By visiting this page on our website: <a href="https://bluestarmedia.com/contact" class="text-blue-400">Contact Us</a></li>
+                                <!-- <li>By phone: +1 (555) 123-4567</li>
+                                <li>By mail: BlueStar Media, 123 Tech Street, San Francisco, CA 94107</li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Cookie Policy -->
+                    <div id="cookie-content" class="legal-content p-8">
+                        <h1 class="text-3xl font-bold mb-6 gradient-text">Cookie Policy</h1>
+                        <p class="mb-6">Last Updated: May 20, 2025</p>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">What Are Cookies?</h2>
+                            <p class="mb-4">Cookies are small text files stored on your device when you visit websites. They help websites remember information about your visit, which can make it easier to visit the site again and make the site more useful to you.  <a href="https://bluestarmedia.ca" class="text-blue-400">bluestarmedia.ca</a>.</p>
+                            <p>By using our website, you consent to the data practices described in this policy. If you do not agree with our policies and practices, please do not use our website.</p>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">How We Use Cookies.</h2>
+                            <p class="mb-4">We collect cookies... </p>
+                            <ul class="mb-4 space-y-2">
+                                <li>To remember your preferences and settings</li>
+                                <li>To analyze how our website is used</li>
+                                <li>To personalize content and ads</li>
+                                <li>To provide social media features</li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">Your Privacy Matter</h2>
+                            <p class="mb-4">At BlueStar Media, we're commited to protecting your privacy while providing a personalized experience. Our cookies align with GDPR, CCPA, and other privacy regulations.<br><br><strong> Types of Data Collected</strong></p>
+                            <ul class="mb-4 space-y-2">
+                                <li>Browsing behaviour and preferences</li>
+                                <li>Device information (anonymized)</li>
+                                <li>Interaction with our service</li>
+                                <li>No personally indentifiable information without consent</li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">Disclosure of Data</h2>
+                            <p class="mb-4">We may disclose your personal information in the following situations:</p>
+                            <ul class="mb-4 space-y-2">
+                                <li><strong>Service Providers:</strong> We may employ third party companies and individuals to facilitate our service, provide the service on our behalf, perform service-related services or assist us in analyzing how our service is used.</li>
+                                <li><strong>Business Transfers:</strong> If we are involved in a merger, acquisition or asset sale, your personal data may be transferred.</li>
+                                <li><strong>Legal Requirements:</strong> We may disclose your information if required to do so by law or in response to valid requests by public authorities.</li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">Security of Data</h2>
+                            <p class="mb-4">The security of your data is important to us but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your personal data, we cannot guarantee its absolute security.</p>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">Your Data Protection Rights</h2>
+                            <p class="mb-4">Depending on your location, you may have certain rights regarding your personal information, including:</p>
+                            <ul class="mb-4 space-y-2">
+                                <li>The right to access, update or delete the information we have on you</li>
+                                <li>The right of rectification</li>
+                                <li>The right to object</li>
+                                <li>The right of restriction</li>
+                                <li>The right to data portability</li>
+                                <li>The right to withdraw consent</li>
+                            </ul>
+                            <p>To exercise any of these rights, please contact us at <a href="mailto:info@bluestarmedia.com" class="text-blue-400">info@bluestarmedia.ca</a>.</p>
+                        </div>
+
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">Changes to This Privacy Policy</h2>
+                            <p class="mb-4">We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the top of this Privacy Policy.</p>
+                            <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-2xl font-semibold mb-4 pl-4">Contact Us</h2>
+                            <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                            <ul class="mt-2 space-y-1">
+                                <li>By email: <a href="mailto:privacy@bluestarmedia.com" class="text-blue-400">info@bluestarmedia.ca</a></li>
+                                <li>By visiting this page on our website: <a href="https://bluestarmedia.com/contact" class="text-blue-400">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+<footer class="bg-gray-900 border-t border-gray-800 py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Brand + two boxes -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center mb-4">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center mr-3">
+            <i class="fas fa-star text-white"></i>
+          </div>
+          <span class="text-xl font-bold gradient-text">BlueStar&nbsp;Media</span>
+        </div>
+        <p class="text-gray-400">
+          Empowering businesses with AI‑driven automation that streamlines operations and boosts productivity.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="md:pl-20">
+        <h3 class="text-lg font-semibold mb-4">Quick&nbsp;Links</h3>
+        <ul class="space-y-2">
+          <li><a href="index.html"           class="text-gray-400 hover:text-white transition">Home</a></li>
+          <li><a href="index.html#about"     class="text-gray-400 hover:text-white transition">About</a></li>
+          <li><a href="index.html#services"  class="text-gray-400 hover:text-white transition">Services</a></li>
+          <li><a href="index.html#contact"   class="text-gray-400 hover:text-white transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Contact&nbsp;Us</h3>
+        <ul class="space-y-2 text-gray-400">
+          <li class="flex items-center"><i class="fas fa-map-marker-alt mr-2"></i> St&nbsp;Catherines, ON</li>
+          <!-- <li class="flex items-center"><i class="fas fa-phone-alt mr-2"></i> +1&nbsp;(555)&nbsp;123‑4567</li> -->
+          <li class="flex items-center"><i class="fas fa-envelope mr-2"></i> info@bluestarmedia.ca</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom strip -->
+    <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col items-center space-y-4">
+      <p class="text-gray-400 text-sm text-center">© 2025 BlueStar Media. All rights reserved.</p>
+
+      <div class="flex space-x-5 text-lg">
+        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/bluestarmediaa/" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Tab switching functionality
+        function showTab(tabName) {
+    // Hide all content
+    document.getElementById('privacy-content').classList.add('hidden');
+    document.getElementById('terms-content').classList.add('hidden');
+    document.getElementById('gdpr-content').classList.add('hidden');
+    document.getElementById('cookie-content').classList.add('hidden');
+    
+    // Remove active class from all tabs
+    document.getElementById('privacy-tab').classList.remove('active');
+    document.getElementById('terms-tab').classList.remove('active');
+    document.getElementById('gdpr-tab').classList.remove('active');
+    document.getElementById('cookie-tab').classList.remove('active');
+
+    // Show selected content and mark tab as active
+    document.getElementById(tabName + '-content').classList.remove('hidden');
+    document.getElementById(tabName + '-tab').classList.add('active');
+
+    // Scroll to the top of the content area
+    document.getElementById(tabName + '-content').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    
+    // Also scroll the window to the top of the legal content section
+    document.querySelector('.legal-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Update URL hash
+    window.location.hash = tabName;
+}
+
+       
+// Listen for hash on page load
+window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash.substring(1); // removes #
+    const validTabs = ['privacy', 'terms', 'gdpr', "cookie"];
+    if (validTabs.includes(hash)) {
+        showTab(hash);
+    } else {
+        // Default tab to show if none selected
+        showTab('privacy');
+    }
+});
+    </script>
+</body>
+</html>
