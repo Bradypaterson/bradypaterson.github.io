@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueStar Media | Our Team</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        .pulse {
+            animation: pulse 3s ease infinite;
+        }
+        .slide-in {
+            animation: slideIn 1s ease-out forwards;
+        }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .bg-dark-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        .glow-border {
+            position: relative;
+        }
+        .glow-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 2px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .glow-border:hover::before {
+            opacity: 1;
+        }
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(to bottom, rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 1));
+        }
+        
+        /* Background decorative elements */
+        .hero-bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            z-index: -1;
+        }
+        
+        .hero-bg-circle-1 {
+            width: 30vw;
+            height: 30vw;
+            top: 10%;
+            left: 5%;
+            opacity: 0.3;
+            animation: pulse 8s infinite alternate;
+        }
+        
+        .hero-bg-circle-2 {
+            width: 20vw;
+            height: 20vw;
+            bottom: 10%;
+            right: 5%;
+            opacity: 0.2;
+            animation: pulse 12s infinite alternate-reverse;
+        }
+        
+        /* Founder Card Styles */
+        .founder-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .founder-card:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.3);
+        }
+        
+        .founder-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(59, 130, 246, 0.3);
+            margin: 0 auto;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: #3b82f6;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            bottom: -8px;
+            left: 0;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            border-radius: 2px;
+        }
+        
+        /* Timeline Styles */
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #3b82f6;
+        }
+        
+        /* Floating AI Elements */
+        .floating-ai {
+            position: absolute;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .ai-1 {
+            top: 20%;
+            left: 5%;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .ai-2 {
+            bottom: 15%;
+            right: 8%;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+        
+        /* Mission Section */
+        .mission-card {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200 font-sans">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <div class="w-16 h-16 flex items-center justify-center mr-3">
+                            <i class="fas fa-star text-blue-500 text-3xl"></i>
+                        </div>
+                        <span class="text-xl font-bold gradient-text">BlueStar Media</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <!-- <a href="our-team.html" class="nav-link pt-2 text-blue-400">Our Team</a> -->
+                    <!-- <a href="FAQ.html" class="nav-link pt-2">FAQ</a> -->
+                    <a href="index.html" class="nav-link pt-2">Home</a>
+                    <a href="book-appointment.html" class="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-md font-medium hover:from-blue-500 hover:to-purple-500 transition-all duration-300">
+                        Book Appointment
+                    </a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-400 hover:bg-gray-800">Our Team</a>
+                <a href="faq.html" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800">FAQ</a>
+                <a href="products.html" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800">Products</a>
+                <a href="book-appointment.html" class="block px-3 py-2 rounded-md text-base font-medium bg-gradient-to-r from-blue-600 to-purple-600 text-center">
+                    Book Appointment
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 slide-in">
+                    Meet <span class="gradient-text">Our Visionary Team</span>
+                </h1>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto mb-10 slide-in delay-1">
+                    The brilliant minds behind BlueStar Media's AI Agents. Discover the expertise and passion that drives our innovation.
+                </p>
+                <a href="#founders" class="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-md font-medium text-lg hover:from-blue-500 hover:to-purple-500 transition-all duration-300 inline-block slide-in delay-2">
+                    Meet Our Founders
+                </a>
+            </div>
+        </div>
+        
+        <!-- Floating AI elements -->
+        <div class="floating-ai ai-1">
+            <i class="fas fa-robot text-6xl text-blue-400"></i>
+        </div>
+        <div class="floating-ai ai-2">
+            <i class="fas fa-brain text-8xl text-purple-400"></i>
+        </div>
+    </section>
+
+    <!-- Founders Section -->
+    <section id="founders" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 slide-in">
+                <span class="section-title gradient-text">Our Founders</span>
+            </h2>
+            <p class="text-lg text-gray-400 max-w-3xl mx-auto slide-in delay-2">
+                Bluestar Media was founded by three driven athletes, Jack Barrett, Brady Paterson, and Philip Kovac. Each with a high-performance background in athletics. Our passion for pushing limits extend beyond the court, it seamlessly transitioned into our entrepreneurial journey. With a shared obsession for working smarter and not harder, our goal is to blend our performance driven mindset with the power of AI. 
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Founder 1: CEO -->
+            <div class="founder-card rounded-xl p-8 slide-in delay-1">
+                <div class="flex flex-col items-center mb-6">
+                    <img src="jack.webp" alt="Jack Barrett" class="founder-image mb-6"  sizes="(max-width: 768px) 100vw, 1500px">
+                    <h3 class="text-2xl font-bold text-center">Jack Barrett</h3>
+                    <p class="text-blue-400 font-medium">Co-Founder & CMO</p>
+                </div>
+                <p class="text-gray-400 text-center mb-6">
+                    With a keen eye for design and a strategic marketing approach, Jack ensures our brand stays aligned with our values, delivering a clear message to our clients.
+                </p>
+                <div class="social-links flex justify-center space-x-3 mb-6">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fas fa-globe"></i></a>
+                </div>
+                <div class="timeline-item mb-0">
+                    <div class="timeline-dot"></div>
+                    <div class="pl-4">
+                        <h4 class="font-bold text-sm">Highlights</h4>
+                        <ul class="text-xs text-gray-400 space-y-2 mt-2">
+                            <li>• Studio Art Major, Brock University</li>
+                            <li>• Grown Social Media accounts 10000's of followers. </li>
+                            <!-- <li>• TED Speaker on Ethical AI</li> -->
+                            <!-- <li>• Author of "The AI Revolution"</li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Founder 2: CTO -->
+            <div class="founder-card rounded-xl p-8 slide-in delay-2">
+                <div class="flex flex-col items-center mb-6">
+                    <img src="brady.webp" 
+                         alt="Brady Paterson" 
+                         class="founder-image mb-4">
+                    <h3 class="text-2xl font-bold text-center">Brady Paterson</h3>
+                    <p class="text-blue-400 font-medium">Co-Founder</p>
+                </div>
+                <p class="text-gray-400 text-center mb-6">
+                    Brady brings his deep knowledge of computer science, math, and physics to the team, playing a key role in building and testing our AI technology, ensuring it's secure and top-tier.
+                </p>
+                <div class="social-links flex justify-center space-x-3 mb-6">
+                    <a href="https://www.linkedin.com/in/bradypaterson/"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Bradypaterson"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/bradypatersonn/"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="timeline-item mb-0">
+                    <div class="timeline-dot"></div>
+                    <div class="pl-4">
+                        <h4 class="font-bold text-sm">Career Highlights</h4>
+                        <ul class="text-xs text-gray-400 space-y-2 mt-2">
+                            <li>• Computer Science Major, Brock University.</li>
+                            <li>• OUA MVB Rookie of the year 23-24.</li>
+                            <!-- <li>• Open Source Contributor to TensorFlow</li> -->
+                            <!-- <li>• Advisor to AI Ethics Board</li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Founder 3: CMO -->
+            <div class="founder-card rounded-xl p-8 slide-in delay-3">
+                <div class="flex flex-col items-center mb-6">
+                    <img src="phil.webp" 
+                         alt="Philip Kovac" 
+                         class="founder-image mb-4">
+                    <h3 class="text-2xl font-bold text-center">Philip Kovac</h3>
+                    <p class="text-blue-400 font-medium">Co-Founder</p>
+                </div>
+                <p class="text-gray-400 text-center mb-6">
+                    With his expertise in data science, Philip brings a strategic approach to growth, ensuring our technology is seamlessly integrated into real business contexts while leading marketing initiatives.
+                </p>
+                <div class="social-links flex justify-center space-x-3 mb-6">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fas fa-globe"></i></a>
+                </div>
+                <div class="timeline-item mb-0">
+                    <div class="timeline-dot"></div>
+                    <div class="pl-4">
+                        <h4 class="font-bold text-sm">Career Highlights</h4>
+                        <ul class="text-xs text-gray-400 space-y-2 mt-2">
+                            <li>• Data Science Student, Brock University</li>
+                            <li>• Named "Top 40 Under 40" by Business Week</li>
+                            <!-- <li>• Built marketing teams at 3 unicorn startups</li> -->
+                            <!-- <li>• Keynote speaker at Web Summit</li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <!-- <section class="py-20 bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 slide-in">
+                    <span class="section-title gradient-text">Our Story</span>
+                </h2>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto slide-in delay-2">
+                    How three brilliant minds came together to revolutionize business with AI.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="slide-in delay-1">
+                    <div class="mission-card p-8 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-4">Our Mission</h3>
+                        <p class="text-gray-300 mb-6">
+                             Our mission is to make AI-powered automation accessible to organizations of all sizes. We are dedicated to creating solutions that improve business operations, drive innovation, and foster growth.
+                        </p>
+                        <div class="flex items-center space-x-4">
+                            <div class="text-blue-400 text-3xl">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Core Values</h4>
+                                <ul class="text-gray-400 text-sm space-y-1 mt-1">
+                                    <li>• Working smarter, not harder.</li>
+                                    <li>• </li>
+                                    <li>• </li>
+                                    <li>• </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-in delay-2">
+                    <div class="relative">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="pl-4">
+                                <h4 class="font-bold">September 2025 - Common grounds</h4>
+                                <p class="text-gray-400 text-sm mt-1">
+                                    September 2024, The start of our journey at Brock Univeristy. Jack, Brady and Phil met at a common ground, the mvb team. They quickly became friends and started discussing their shared interests in technology and entrepreneurship.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="pl-4">
+                                <h4 class="font-bold">January 2025 - Essentials of Artificial Intelligence</h4>
+                                <p class="text-gray-400 text-sm mt-1">
+                                    Second semester of Brady's first year at Brock University. He was enrolled in a class called "Essentials for Artificial Intelligence" where the interest began.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="pl-4">
+                                <h4 class="font-bold">Febuary 2025 - The Idea</h4>
+                                <p class="text-gray-400 text-sm mt-1">
+                                    Jack first came to Brady with the idea of creating a business that would help companies leverage AI to improve their operations. Brady was immediately on board.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="pl-4">
+                                <h4 class="font-bold">March 2025 - BlueStar Media</h4>
+                                <p class="text-gray-400 text-sm mt-1">
+                                    Soon Philip joined the team, bringing his expertise in data science and marketing. Together, they began building the foundation of BlueStar Media.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="pl-4">
+                                <h4 class="font-bold">2025 - Today</h4>
+                                <p class="text-gray-400 text-sm mt-1">
+                                    Serving 500+ clients across Canada with a versitile team of many different skills.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Team Culture Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 slide-in">
+                    <span class="section-title gradient-text">Our Culture</span>
+                </h2>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto slide-in delay-2">
+                    The principles that guide how we work and innovate together.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-800/50 p-8 rounded-xl border border-gray-700 slide-in delay-1">
+                    <div class="text-blue-400 text-4xl mb-4">
+                        <img src="hand.png" alt="Handshake" class="w-12 h-12">
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Customer-Centricity</h3>
+                    <p class="text-gray-400">
+                       Putting our clients at the heart of everything we do and delivering solutions tailored to their needs.
+                    </p>
+                </div>
+
+                <div class="bg-gray-800/50 p-8 rounded-xl border border-gray-700 slide-in delay-2">
+                    <div class="text-blue-400 text-4xl mb-4">
+                        <img src="kaizen.png" alt="Kaizen" class="w-12 h-12">
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Kaizen</h3>
+                    <p class="text-gray-400">
+                        The Japanese philosophy of "continuous improvement". We believe that AI is evolving everyday, and so should we.
+                    </p>
+                </div>
+
+                <div class="bg-gray-800/50 p-8 rounded-xl border border-gray-700 slide-in delay-3">
+                    <div class="text-blue-400 text-4xl mb-4">
+                        <img src="clock.png" alt="Clock" class="w-12 h-12">
+                    </div>
+                    <h3 class="text-xl font-bold mb-3"> Visionary Partnerships</h3>
+                    <p class="text-gray-400">
+                        Forging long-term partnerships with clients, collaborators, and industry leaders to ensure we are always aligned with the vision of the future, both technologically and strategically.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-900/30 to-purple-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 slide-in">
+                Ready to Work With Our Team?
+            </h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10 slide-in delay-1">
+                Our founders personally oversee all strategic client engagements. Let's discuss how we can transform your business together.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 slide-in delay-2">
+                <a href="book-appointment.html" class="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-md font-medium hover:from-blue-500 hover:to-purple-500 transition-all duration-300 inline-block">
+                    Book an Appointment
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Add slide-in animation when elements come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('slide-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.slide-in').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
